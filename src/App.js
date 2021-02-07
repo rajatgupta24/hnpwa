@@ -1,10 +1,12 @@
 import HomePage from "./components/Home/HomePage";
 
-export default function App () {
-  
+export default function App () {  
 	return (
-		<div>
-			<HomePage/>
-		</div>
+		<>
+			<h1>HNPWA</h1>
+			<div>
+				<HomePage/>
+			</div>
+		</>
 	)
 }
