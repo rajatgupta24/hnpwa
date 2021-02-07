@@ -10,9 +10,8 @@ export default function Story({id}) {
 	}, [])
 
 	return (
-		<>
-			<p>{JSON.stringify(story.title)}</p>
-			<a href={story.url} target="_blank">link</a>
-		</>
+		<ul>
+			<a href={story.url} target="_blank">{story.title}</a>
+		</ul>
 	);
 }
