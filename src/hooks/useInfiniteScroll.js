@@ -6,13 +6,9 @@ const postsPerPage = 30;
 export const useInfiniteScroll = () => {
 	const [loading, setLoading] = useState(false);
 	const [count, setCount] = useState(postsPerPage);
-
+	
 	const handleScroll = () =>{
-
-    // const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
-		// console.log(bottom);
-
-		if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.clientHeight || loading) {
+		if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || loading) {
 			return false;
 		}
 
@@ -22,7 +18,7 @@ export const useInfiniteScroll = () => {
 	}
 
 	useEffect (() => {
-		if (loading) return;
+		if (!loading) return;
 
 		if (count + postsPerPage >= MAX) {
 			setCount(MAX);
@@ -34,9 +30,9 @@ export const useInfiniteScroll = () => {
 	}, [loading]);
 
 	useEffect(() => {
-		window.addEventListener ("scroll", handleScroll);
+		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener ("scroll", handleScroll);
-	}, []);
+	}, [])
 
 	return {count};
 }

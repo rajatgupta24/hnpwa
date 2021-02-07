@@ -13,12 +13,17 @@ export default function Story({id}) {
 	}, [])
 
 	return (
-		<li className={styles.story}>
-			<a href={story.url}>
-				<p className={styles.title}>{story.title}</p>
-				<p>By: {story.by}</p>
-				<p>Posted: {timeStamp(story.time)}</p>
-			</a>
-		</li>
+		<>
+			{story.title && (
+				<li className={styles.story}>
+					<a href={story.url}>
+						<p className={styles.title}>{story.title}</p>
+
+						<p>By: {story.by}</p>
+						<p>Posted: {timeStamp(story.time)}</p>
+					</a>
+				</li>
+			)}
+		</>
 	);
 }
