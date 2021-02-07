@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- <meta name="theme-color" content="#000000" /> -->
-    <!-- <meta name="description" content="Get top new from hacker news!" /> -->
-    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Get top new from hacker news!" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
 
@@ -16,10 +16,10 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script>
-      if ('ServiceWorker' in navigator){
+      if ('serviceWorker' in navigator){
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./sw")
-          .then((reg) => console.log("register"))
+          navigator.serviceWorker.register("./sw.js")
+          .then((reg) => console.log("register", reg.scope))
           .catch((err) => console.log(err))
         })
       }
