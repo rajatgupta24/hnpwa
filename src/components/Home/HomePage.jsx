@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getStories, getStoryIds } from "../../service/Api";
 import Story from "../Story/Story";
+import styles from "./Homepage.module.css";
 
 export default function HomePage() {
 	
@@ -10,5 +11,11 @@ export default function HomePage() {
 		getStoryIds().then((res) => setStoryIds(res));
   }, [])
 
-  return storyIds.map((id, i) => <Story key={i} id={id} />);
+  return (
+    <>
+      <ul className={styles.list}>
+        {storyIds.map((id, i) => {return <Story key={i} id={id} />})}
+      </ul>
+    </>
+  );
 }
