@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const MAX = 500;
-const postsPerPage = 30;
+const postsPerPage = 10;
 
 export const useInfiniteScroll = () => {
 	const [loading, setLoading] = useState(false);
@@ -10,9 +10,7 @@ export const useInfiniteScroll = () => {
 	const handleScroll = () =>{
 		if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || loading) {
 			return false;
-		}
-
-		else {
+		} else {
 			setLoading(true);
 		}
 	}

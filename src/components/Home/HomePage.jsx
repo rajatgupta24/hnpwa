@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 
 import Story from "../Story/Story";
 import { getStoryIds } from "../../service/Api";
@@ -14,15 +14,9 @@ export default function HomePage() {
     getStoryIds().then((res) => setStoryIds(res));
   }, []);
 
-  const handleScroll = (e) => {
-    console.log("SCROLLLLLLLL")
-    console.log(window)
-    console.log(e)
-  }
-
   return (
     <>
-      <ul className={styles.list} onScroll={handleScroll}>
+      <ul className={styles.list}>
         {storyIds.slice(0, count).map((id, i) => {
           
           return <Story key={i} id={id} />})}
