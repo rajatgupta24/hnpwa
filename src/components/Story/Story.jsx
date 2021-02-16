@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 
 import { getStories } from '../../service/Api';
 import { timeStamp } from '../../function/timeStamp';
-
+import Skeleton from '@material-ui/lab/Skeleton';
 import styles from "./Story.module.css";
 
 export default function Story({id}) {
@@ -30,7 +30,11 @@ export default function Story({id}) {
 					</a>
 				</li>
 			)) : (
-				<p>Loading</p>
+				<div className={styles.skeletonCont}>
+					<Skeleton variant="text" />
+					<Skeleton variant="text" />
+					<Skeleton variant="text" />
+				</div>
 			)}
 		</>
 	);

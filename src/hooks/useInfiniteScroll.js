@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const MAX = 500;
-const postsPerPage = 10;
+const postsPerPage =30;
 
 export const useInfiniteScroll = () => {
 	const [loading, setLoading] = useState(false);

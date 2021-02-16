@@ -1,6 +1,10 @@
 .story{
-	padding: 1rem;
+	margin: 0.5rem auto;
+	padding: .25rem 1.5rem;
+	width: 85%;
 	font-family: sans-serif;
+	background: #ececec;
+	border-radius: 1rem;
 }
 
 .story > a{
@@ -13,13 +17,18 @@
 }
 
 .title{
+	margin: .5rem 0;
 	font-size: 1.25rem;
 	text-decoration: none;
 	color: rgba(0, 0, 0, .75);
 }
 
 .info{
+	font-size: .8rem;
 	display: flex;
 	justify-content: space-between;
 }
 
+.skeletonCont{
+	margin: 1rem 0;
+}
