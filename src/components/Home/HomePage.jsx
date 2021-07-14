@@ -6,21 +6,37 @@ import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
 
 import styles from "./Homepage.module.css";
 
-export default function HomePage() {
+function HomePage() {
 	const { count } = useInfiniteScroll();
+	const [URL, setURL] = useState("topstories");
 	const [storyIds, setStoryIds] = useState([]);
 
-  useEffect(() => {
-    getStoryIds().then((res) => setStoryIds(res));
-  }, []);
+
+  useEffect( async () => {
+		const { data } = await getStoryIds(URL);
+		setStoryIds(data)
+  }, [URL]);
 
   return (
     <>
+			<nav>
+				<input type="text"/>
+				<select name="cars" id="cars" onChange={e => setURL(e.target.value)}>
+					<option value="topstories">Top Stories</option>
+					<option value="newstories">New Stories</option>
+					<option value="beststories">Best Stories</option>
+				</select>
+			</nav>
+
       <ul className={styles.list}>
-        {storyIds.slice(0, count).map((id, i) => {
-          
-          return <Story key={i} id={id} />})}
+        {storyIds.length ? storyIds.slice(0, count).map((id, i) => {
+          return <Story key={i} id={id} />
+        }) : (
+          <p>Loading...</p>
+        )}
       </ul>
     </>
   );
 }
+
+export default HomePage;

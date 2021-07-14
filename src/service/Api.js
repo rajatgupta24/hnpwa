@@ -4,8 +4,10 @@ const baseURL = `https://hacker-news.firebaseio.com/v0/`;
 const getStoryURL = `https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty`;
 const storiesURL = `${baseURL}item/`;
 
-export const getStoryIds = async () => {
-	const res = await axios.get(getStoryURL).then(({data}) => data);
+export const getStoryIds = async (URL) => {
+	console.log(URL)
+	const res = await axios.get(`https://hacker-news.firebaseio.com/v0/${URL}.json?print=pretty`)
+		.then(({data}) => data);
 	return res;
 }
 

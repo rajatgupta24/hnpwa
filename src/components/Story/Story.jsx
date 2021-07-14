@@ -10,6 +10,7 @@ export default function Story({id}) {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
+		console.log(id)
 		setLoading(true);
 		getStories(id).then(({data}) => {
 			(data.url && data.title) && setStory(data)
