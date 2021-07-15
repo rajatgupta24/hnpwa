@@ -1,10 +1,12 @@
-/* .story{
-	margin: 0.5rem auto;
+.story{
+	margin: 1rem auto;
 	padding: .25rem 1.5rem;
-	width: 85%;
+	width: 70%;
 	font-family: sans-serif;
 	background: #ececec;
 	border-radius: 1rem;
+	list-style: none;
+	box-shadow: 0px 0px 3px 0px #eee;
 }
 
 .story > a{
@@ -13,22 +15,22 @@
 }
 
 .story:hover{
-	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .10);
+	box-shadow: 0px 0px 5px 1px #eee;
 }
 
 .title{
 	margin: .5rem 0;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 	text-decoration: none;
 	color: rgba(0, 0, 0, .75);
 }
 
 .info{
-	font-size: .8rem;
+	font-size: 1rem;
 	display: flex;
 	justify-content: space-between;
 }
 
 .skeletonCont{
 	margin: 1rem 0;
-} */
+}

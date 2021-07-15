@@ -1,8 +1,7 @@
-import {useEffect, useState} from 'react';
-
-import { getStories } from '../../service/Api';
-import { timeStamp } from '../../function/timeStamp';
-import Skeleton from '@material-ui/lab/Skeleton';
+import { useEffect, useState } from "react";
+import { getStories } from "../../service/Api";
+import { timeStamp } from "../../function/timeStamp";
+import Skeleton from "@material-ui/lab/Skeleton";
 import styles from "./Story.module.css";
 
 export default function Story({id}) {
@@ -10,16 +9,16 @@ export default function Story({id}) {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		console.log(id)
 		setLoading(true);
 		getStories(id).then(({data}) => {
 			(data.url && data.title) && setStory(data)
-		} );
+		});
 	}, [])
 
 	return (
 		<>
 		{
+			
 			loading ? (story.title && (
 				<li className={styles.story}>
 					<a href={story.url}>
